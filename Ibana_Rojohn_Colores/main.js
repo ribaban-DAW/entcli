@@ -5,12 +5,17 @@
 // M Turquesa: #12F3E5. m Rosa: #F312AF. M Rojo: #F31212. Crea la estructura de
 // datos necesaria, rellénala con los datos aportados y muéstralos en pantalla.
 
-const colores = {
-    "ENaranja": "#F39C12",
-    "Lima": "#COF312",
-    "MTurquesa": "#12F3E5",
-    "MRosa": "#F312AF",
-    "MRojo": "#F31212",
-};
+const colores = [
+    "ENaranja: #F39C12",
+    "Lima: #COF312",
+    "MTurquesa: #12F3E5",
+    "MRosa: #F312AF",
+    "MRojo: #F31212",
+];
 
 console.log(colores);
+const container = document.getElementById("container");
+
+for (const color of colores) {
+    container.innerHTML += `<p>${color}</p>`
+}

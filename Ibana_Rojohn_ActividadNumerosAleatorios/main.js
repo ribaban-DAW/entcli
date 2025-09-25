@@ -3,9 +3,9 @@
 // Nota: para generar números aleatorios desde O hasta MAX, puedes utilizar la expresión Math.floor(Math.random()*MAX);
 
 const arr = [];
-const MAX = 27;
+const MAX = 100;
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < MAX; i++) {
     arr.push(Math.floor(Math.random() * MAX));
 }
 
