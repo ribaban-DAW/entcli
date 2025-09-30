@@ -9,12 +9,15 @@ for (let i = 0; i < MAX; i++) {
     arr.push(Math.floor(Math.random() * MAX));
 }
 
+const container = document.getElementById("container");
 let countEven = 0;
 for (const n of arr) {
     if (n % 2 === 0) {
+        container.innerHTML += `<p>${n}</p>`;
         console.log(n);
         countEven++;
     }
 }
 
 console.log(`Hay ${countEven} elementos pares en el array`);
+container.innerHTML += `Hay ${countEven} elementos pares en el array`;
