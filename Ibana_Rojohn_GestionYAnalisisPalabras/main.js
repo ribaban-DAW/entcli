@@ -95,8 +95,7 @@ function showLastWord(words) {
 }
 
 function getSortedWords(words) {
-    const copy = [...words];
-    return copy.sort((a, b) => { return a.localeCompare(b) });
+    return words.sort((a, b) => { return a.localeCompare(b) });
 }
 
 const words = getWords();
@@ -104,6 +103,6 @@ showWords(words);
 showWordsAmount(words);
 showFirstWord(words);
 showLastWord(words);
-const sortedWords = getSortedWords(words);
+const sortedWords = getSortedWords([...words]);
 showWords(sortedWords);
 showWords(words);
