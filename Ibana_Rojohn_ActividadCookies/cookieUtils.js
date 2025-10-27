@@ -6,9 +6,9 @@ function setCookie(name = "", value = "",  maxAgeDuration = 60) {
 function getCookie(name = "") {
     const cookies = document.cookie.split(";");
     for (const cookie of cookies) {
-        const [name, value] = cookie.split("=");
-        if (name.trim() === name.trim()) {
-            console.log(`Found ${name}`);
+        const [key, value] = cookie.split("=");
+        if (key.trim() === name.trim()) {
+            console.log(`Found ${key.split()}`);
             return value;
         }
     }
