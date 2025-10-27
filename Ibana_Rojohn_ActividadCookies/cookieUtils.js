@@ -9,7 +9,7 @@ function getCookie(name = "") {
         const [key, value] = cookie.split("=");
         if (key.trim() === name.trim()) {
             console.log(`Found ${key.split()}`);
-            return value;
+            return decodeURIComponent(value);
         }
     }
     
@@ -24,8 +24,8 @@ function getCookies() {
 function deleteCookie(name = "") {
     const cookies = getCookies();
     for (const cookie of cookies) {
-        const [name, value] = cookie.split("=");
-        if (name) {
+        const [key, value] = cookie.split("=");
+        if (key) {
             console.log(`Clearing cookie ${name.trim()}`);
             setCookie(name.trim(), value.trim(), 0);
         }
