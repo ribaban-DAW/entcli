@@ -1,4 +1,5 @@
 function setCookie(name = "", value = "",  maxAgeDuration = 60) {
+    console.log(`Set cookie '${name}' to '${value}' with a duration of ${maxAgeDuration}s`)
     document.cookie = `${name}=${value};max-age=${maxAgeDuration}`;
 }
 
@@ -7,10 +8,12 @@ function getCookie(name = "") {
     for (const cookie of cookies) {
         const [name, value] = cookie.split("=");
         if (name.trim() === name.trim()) {
+            console.log(`Found ${name}`);
             return value;
         }
     }
     
+    console.log(`Couldn't find ${name}`);
     return undefined;
 }
 
