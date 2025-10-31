@@ -45,13 +45,13 @@ const festivales = JSON.parse(festivalesJSON);
 
 const sect = document.createElement("section");
 const sectTitle = document.createElement("h1");
-sectTitle.appendChild(document.createTextNode(`Festival: ${festivales.Festival}`));
+sectTitle.textContent = `Festival: ${festivales.Festival}`;
 
 const sectCity = document.createElement("p");
-sectCity.appendChild(document.createTextNode(`Ciudad: ${festivales.Ciudad}`));
+sectCity.textContent = `Ciudad: ${festivales.Ciudad}`;
 
 const sectYear = document.createElement("p");
-sectYear.appendChild(document.createTextNode(`Año: ${festivales.Anno}`));
+sectYear.textContent = `Año: ${festivales.Anno}`;
 
 sect.appendChild(sectTitle);
 sect.appendChild(sectCity);
@@ -63,20 +63,20 @@ for (const grupo of grupos) {
     const sectArticle = document.createElement("article");
     
     const sectArticleTitle = document.createElement("h2");
-    sectArticleTitle.appendChild(document.createTextNode(grupo.nombre));
+    sectArticleTitle.textContent = grupo.nombre;
 
     const sectArticleCompany = document.createElement("p");
-    sectArticleCompany.appendChild(document.createTextNode(`Compañía: ${grupo.compania}`));
+    sectArticleCompany.textContent = `Compañía: ${grupo.compania}`;
     
     const sectArticleDiscography = document.createElement("p");
-    sectArticleDiscography.appendChild(document.createTextNode(`Discografía`));
+    sectArticleDiscography.textContent = `Discografía`;
     
     const sectArticleList = document.createElement("ul");
     
     const discos = grupo.discos;
     for (const disco of discos) {
         const sectArticleListRow = document.createElement("li");
-        sectArticleListRow.appendChild(document.createTextNode(disco));
+        sectArticleListRow.textContent = disco;
 
         sectArticleList.appendChild(sectArticleListRow);
     }
