@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="contenido_1"> [1] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lacus sit amet sapien ornare mollis consectetur vel neque. Sed dictum dolor non lorem rhoncus sodales. Suspendisse tempor ornare velit, sed molestie lorem rutrum eget. Etiam metus dui, pulvinar vel volutpat eu, luctus et sapien. Pellentesque commodo massa at porta egestas. Etiam a massa sit amet velit imperdiet maximus. Praesent id enim purus. Donec egestas massa dolor, quis cursus nulla tincidunt quis. </p>
+    <a id="enlace_1" href="#">Ocultar contenido</a> <br/> 
+    <p id="contenido_2"> [2] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lacus sit amet sapien ornare mollis consectetur vel neque. Sed dictum dolor non lorem rhoncus sodales. Suspendisse tempor ornare velit, sed molestie lorem rutrum eget. Etiam metus dui, pulvinar vel volutpat eu, luctus et sapien. Pellentesque commodo massa at porta egestas. Etiam a massa sit amet velit imperdiet maximus. Praesent id enim purus. Donec egestas massa dolor, quis cursus nulla tincidunt quis. </p>
+    <a id="enlace_2" href="#">Ocultar contenido</a><br/> 
+    <p id="contenido_3"> [3] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel lacus sit amet sapien ornare mollis consectetur vel neque. Sed dictum dolor non lorem rhoncus sodales. Suspendisse tempor ornare velit, sed molestie lorem rutrum eget. Etiam metus dui, pulvinar vel volutpat eu, luctus et sapien. Pellentesque commodo massa at porta egestas. Etiam a massa sit amet velit imperdiet maximus. Praesent id enim purus. Donec egestas massa dolor, quis cursus nulla tincidunt quis. </p>
+    <a id="enlace_3" href="#">Ocultar contenido</a>
+    <script type="text/javascript">
+
+        const elements = [];
+
+        for (let i = 1; i <= document.links.length; i++) {
+            elements.push({p: document.getElementById(`contenido_${i}`), a: document.getElementById(`enlace_${i}`)})
+        }
+
+        function showContent(element) {
+            element["p"].style.display = "block";
+            element["a"].textContent = "Ocultar contenido";
+        }
+        
+        function hideContent(element) {
+            element["p"].style.display = "none";
+            element["a"].textContent = "Mostrar contenido";
+        }
+
+        function muestraOculta(element) {
+            if (element["a"].textContent === "Ocultar contenido") {
+                hideContent(element);
+            } else {
+                showContent(element);
+            }
+        }
+
+        document.body.addEventListener("click", (e) => {
+            for (const element of elements) {
+                if (element["a"] === e.target) {
+                    muestraOculta(element);
+                    break;
+                }
+            }
+        })
+    </script>   
+</body>
+</html>

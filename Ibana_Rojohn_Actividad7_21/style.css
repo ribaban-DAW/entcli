@@ -1,0 +1,6 @@
+div {
+    display: flex;
+    justify-content: space-between;
+    max-width: 50vw;
+    align-items: center;
+}
