@@ -1,0 +1,39 @@
+:root {
+    --form_bgcolor: #ededed;
+    --form_padding: 2em;
+    --form_gap: 1em;
+    --input_vertical_padding: 0.4em;
+    --input_horizontal_padding: 0.5em;
+    --input_border_color: gray;
+    --input_border_radius: 5px;
+}
+
+.centrado {
+    min-height: 100vh;
+    margin: 0 auto;
+    margin-top: 12vh;
+    width: 60%;
+}
+
+.contact-form {
+    background: var(--form_bgcolor);
+    padding: var(--form_padding);
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+    gap: var(--form_gap);
+}
+
+.group {
+    display: grid;
+
+    input {
+        border: 1px solid var(--input_border_color);
+        padding: var(--input_vertical_padding) var(--input_horizontal_padding);
+        border-radius: var(--input_border_radius);
+    }
+}
+
+.grid-col-span2 {
+    grid-column: 1 / -1;
+}
