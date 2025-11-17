@@ -1,0 +1,110 @@
+/* Reset básico */
+body, h1, h2, ul, li, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    position: relative;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart-icon {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#cart-count {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+/* Carrito desplegable */
+#cart-dropdown {
+    display: none;
+
+/*AÑADE AQUI EL CODIGO NECESARIO PARA AJUSTAR LA POSICIÓN DEL DESPLEGABLE*/
+    position: fixed;
+    top: 40px;
+    right: 10px;
+
+    width: 300px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+#cart-items {
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 10px;
+}
+
+#checkout-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+#checkout-button:hover {
+    background-color: #218838;
+}
+
+/* Lista de productos */
+#product-list {
+    list-style: none;
+    padding: 20px;
+    /*AÑADE EL CODIGO NECESARIO PARA QUE LOS PRODUCTOS DEL CARRITO FORMEN UNA REJILLA RESPONSIVE*/
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1em;
+}
+
+.product-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product-item button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-item button:hover {
+    background: #0056b3;
+}
+.producto-carrito{
+/*AÑADE EL CODIGO NECESARIO PARA QUE LOS ARTÍCULOS DEL CARRITO ESTE ALINEADOS */
+    display: grid;
+    grid-template-columns: 4fr 1fr 2fr 1fr;
+
+    padding: 5px 2px;   
+    font-size: small;
+}
