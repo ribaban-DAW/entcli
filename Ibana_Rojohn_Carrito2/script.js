@@ -87,10 +87,7 @@ function addCartItem(producto) {
     const index = cart.findIndex((p) => p.id === producto.id);
     if (index !== -1) {
         cart[index].cantidad++;
-        // NOTA: Considero que asignar un id al producto en el carrito simplificaría el obtener el elemento
-        // ya que solo habría que hacer un document.getElementById(`cartItem${producto.id}`);
-        const itemElements = [...document.querySelectorAll("#cart-items > li[data-id]")];
-        const itemElement = itemElements.filter(itemElement => itemElement.dataset.id == producto.id)[0];
+        const itemElement = document.querySelectorAll(`#cart-items > li[data-id="${producto.id}"]`)[0];
         fillCartItem(itemElement, producto, cart[index].cantidad);
     } else {
         cart.push({...producto, cantidad: 1});
