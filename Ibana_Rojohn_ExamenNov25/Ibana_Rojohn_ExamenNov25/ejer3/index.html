@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reserva Hotelera</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="reserva.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Formulario de Reserva</h1>
+
+    <form id="reserva-form" novalidate>
+      <!-- Nombre completo -->
+      <div class="field">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Ej. Ana María López" autocomplete="name" />
+        <div id="error-nombre" class="error"></div>
+      </div>
+
+      <!-- Email -->
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" placeholder="cliente@mail.com" autocomplete="email" />
+        <div id="error-email" class="error"></div>
+      </div>
+
+      <!-- Número de pasaporte -->
+      <div class="field">
+        <label for="pasaporte">Número de pasaporte</label>
+        <input id="pasaporte" name="pasaporte" type="text" placeholder="Ej. X1234567" />
+        <div id="error-pasaporte" class="error"></div>
+      </div>
+
+      <!-- Fecha de entrada -->
+      <div class="field">
+        <label for="fecha">Fecha de entrada</label>
+        <input id="fecha" name="fecha" type="date" />
+        <div id="error-fecha" class="error"></div>
+      </div>
+
+      <!-- Número de noches -->
+      <div class="field">
+        <label for="noches">Número de noches</label>
+        <input id="noches" name="noches" type="number" min="1" max="30" placeholder="1" />
+        <div id="error-noches" class="error"></div>
+      </div>
+
+      <!-- Tipo de habitación -->
+      <div class="field">
+        <label for="habitacion">Tipo de habitación</label>
+        <select id="habitacion" name="habitacion">
+          <option value="">-- Seleccione --</option>
+          <option value="individual">Individual</option>
+          <option value="doble">Doble</option>
+          <option value="suite">Suite</option>
+        </select>
+        <div id="error-habitacion" class="error"></div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-calcular" type="submit">Calcular Reserva</button>
+        <div class="note">Precio base por noche: Individual $80, Doble $120, Suite $200</div>
+      </div>
+
+      <div id="resultado"></div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+@media (min-width: 1025px) {
+    /* Contenedor de la lista */
+    .framework-lista {
+        display: flex;               /* Activamos Flexbox */
+        justify-content: space-between; /* Distribuimos los elementos con espacio entre ellos */
+        flex-wrap: wrap;             /* Permitimos que los elementos se envuelvan si no caben en una fila */
+        list-style: none;            /* Quitamos los bullets por defecto */
+        padding: 0;                  /* Quitamos padding del ul */
+        margin: 0;                   /* Quitamos margin del ul */
+    }
+
+    /* Elementos de la lista */
+    .framework-elemento {
+        margin: 0 10px;              /* Espaciado horizontal opcional entre elementos */
+    }
+}

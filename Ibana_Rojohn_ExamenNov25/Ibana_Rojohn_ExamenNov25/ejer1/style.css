@@ -1,0 +1,21 @@
+ li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 250px;
+            padding: 5px 8px;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+            border-radius: 4px;
+        }
+
+        .delete-btn {
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            font-weight: bold;
+        }
