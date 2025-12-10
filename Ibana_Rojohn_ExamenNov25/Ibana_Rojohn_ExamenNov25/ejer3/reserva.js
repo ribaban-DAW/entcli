@@ -7,6 +7,7 @@ function getCategoryPrice() {
     const category = document.getElementById("habitacion").value;
     const formattedCategory = category.trim().toLowerCase();
 
+    
     if (formattedCategory === "individual") {
         return 80;
     } else if (formattedCategory === "doble") {
@@ -87,12 +88,12 @@ function isValidHabitacion(param) {
 }
 
 const fields = [
-    {id: "nombre", validate: (param) => { return isValidNombre(param); }, regex: /^([a-z]|[A-Z]|(á|é|í|ó|ú)|(Á|É|Í|Ó|Ú))+(\s([a-z]|[A-Z]|(á|é|í|ó|ú|ñ)|(Á|É|Í|Ó|Ú|Ñ))+)+$/, errorMsg: "Ingrese un nombre válido (letras y al menos dos palabras)"},
-    {id: "email", validate: (param) => { return isValidEmail(param); }, regex: /^([a-z]|[A-Z]|[0-9])+@(([a-z]|[A-Z]|[0-9])+\.)+[a-z]{2,3}$/, errorMsg: "Email inválido"},
-    {id: "pasaporte", validate: (param) => { return isValidPasaporte(param); }, regex: /^[a-z][A-Z][0-9]{7}$/, errorMsg: "Formado inválido. Ejemplo: X1234567"},
-    {id: "fecha", validate: (param) => { return isValidFecha(param); }, regex: /^asd$/, errorMsg: "La fecha debe ser posterior a hoy."},
-    {id: "noches", validate: (param) => { return isValidNoches(param); }, regex: /^([1-9])|([1-2][0-9])|(30)$/, errorMsg: "Número de noches entre 1 y 30"},
-    {id: "habitacion", validate: (param) => { return isValidHabitacion(param); }, regex: /^asd$/, errorMsg: "Seleccione un tipo de habitación"},
+    {id: "nombre", validate: (param) => { return isValidNombre(param); }, errorMsg: "Ingrese un nombre válido (letras y al menos dos palabras)"},
+    {id: "email", validate: (param) => { return isValidEmail(param); }, errorMsg: "Email inválido"},
+    {id: "pasaporte", validate: (param) => { return isValidPasaporte(param); }, errorMsg: "Formado inválido. Ejemplo: X1234567"},
+    {id: "fecha", validate: (param) => { return isValidFecha(param); }, errorMsg: "La fecha debe ser posterior a hoy."},
+    {id: "noches", validate: (param) => { return isValidNoches(param); }, errorMsg: "Número de noches entre 1 y 30"},
+    {id: "habitacion", validate: (param) => { return isValidHabitacion(param); }, errorMsg: "Seleccione un tipo de habitación"},
 ];
 
 function validateFields() {
@@ -100,7 +101,7 @@ function validateFields() {
 
     fields.forEach((field) => {
         const inputElement = document.getElementById(field.id);
-        const isValid = !field.validate(inputElement.value);
+        const isValid = field.validate(inputElement.value);
         if (!isValid) {
             hasError = true;
         }

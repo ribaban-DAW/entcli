@@ -12,7 +12,7 @@ const catalogo = {
 
 function getSortButton(state) {
     const sortButtonElement = document.createElement("button");
-    sortButtonElement.setAttribute("id", "sortBUtton");
+    sortButtonElement.setAttribute("id", "sortButton");
     sortButtonElement.textContent = `Ordenar por precio: ${state}`;
 
     return sortButtonElement;
@@ -154,7 +154,7 @@ function fillProductList(productos, state, inputFilter = "") {
     productoListElement.textContent = "";
 
     sortProductos
-        .filter(sortProducto => sortProducto["nombre"].toLowerCase().includes(inputFilter.toLowerCase()))
+        .filter(sortProducto => sortProducto["nombre"].toLowerCase().includes(inputFilter.trim().toLowerCase()))
         .forEach((producto) => {
             const productoArticle = document.createElement("article");
             const productoTitle = document.createElement("h1");
@@ -210,7 +210,7 @@ fillProductList(catalogo["productos"], getCurrentState());
 fillFooter(catalogo["productos"]);
 
 document.body.addEventListener("click", (e) => {
-    if (e.target && e.target.id === "sortBUtton") {
+    if (e.target && e.target.id === "sortButton") {
         stateIndex++;
 
         fillHeader(catalogo["tienda"], getCurrentState());

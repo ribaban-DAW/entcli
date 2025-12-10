@@ -12,7 +12,7 @@ const fields = [
     {id: "social-security", regex: /^\d{3}-\d{2}-\d{4}$/, errorMsg: "Seguridad Social inválido" },
     {id: "url", regex: /^(http(s)?:\/\/)?(\w{3}\.)?\w*\.(com|es)$/, errorMsg: "URL inválida" },
 ];
-
+// 
 const formElement = document.getElementById("validation-form");
 formElement.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -21,8 +21,6 @@ formElement.addEventListener("submit", (e) => {
         const inputElement = document.getElementById(field.id);
 
         if (!field.regex.test(inputElement.value)) {
-            console.log(inputElement.value);
-            console.log(field.regex);
             alert(field.errorMsg);
             valid = false;
         }

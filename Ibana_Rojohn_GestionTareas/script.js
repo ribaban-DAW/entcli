@@ -1,8 +1,9 @@
 const tasks = [];
 
-const addTaskElement = document.getElementById("addTask");
 const taskListElement = document.getElementById("taskList");
 const taskInputElement = document.getElementById("taskInput");
+
+const saveTaskCookie = localStorage.getItem("saveTaskCookie");
 
 function createTaskElement(task) {
     const taskElement = document.createElement("li");
@@ -38,15 +39,51 @@ function addTaskToList(task) {
 
     tasks.push(task);
     taskListElement.appendChild(createTaskElement(task));
+
+    if (tasksFromCookie === "1") {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
 }
 
 function removeTaskFromList(id) {
     const index = tasks.findIndex((t) => { return t.id ==id; });
-
+    
     if (index !== -1) {
         tasks.splice(index, 1);
         const removeButtonElement = document.body.querySelector(`#taskList > li > button[data-id="${id}"]`);
         removeButtonElement.closest("li").remove();
+    }
+    if (tasksFromCookie === "1") {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+}
+
+function hideCookieSection() {
+    const cookiesEl = document.querySelector("section.cookies");
+    cookiesEl.style.display = "none";
+}
+
+function aceptarCookies() {
+    hideCookieSection();
+
+    localStorage.setItem("saveTaskCookie", "1");
+}
+
+function rechazarCookies() {
+    hideCookieSection();
+    
+    localStorage.clear();
+    localStorage.setItem("saveTaskCookie", "0");
+}
+
+if (saveTaskCookie) {
+    hideCookieSection();
+
+    if (saveTaskCookie === "1") {
+        const tasksFromCookie = JSON.parse(localStorage.getItem("tasks"));
+        tasksFromCookie.forEach(task => {
+            addTaskToList(task);
+        });
     }
 }
 
@@ -54,8 +91,11 @@ document.body.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
         if (e.target.closest("#taskList")) {
             removeTaskFromList(e.target.dataset.id);
-        }
-        else if (e.target.closest("body")) {
+        } else if (e.target.id === "acceptCookiesBtn") {
+            aceptarCookies();
+        } else if (e.target.id === "rejectCookiesBtn") {
+            rechazarCookies();
+        } else if (e.target.closest("body")) {
             const task = {
                 id: taskId++,
                 content: taskInputElement.value.trim(),
