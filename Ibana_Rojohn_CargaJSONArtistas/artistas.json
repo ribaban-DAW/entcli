@@ -1,0 +1,42 @@
+[
+    {
+        "nombre": "Karol G",
+        "canciones": [
+            "Tusa",
+            "Provenza",
+            "Bichota",
+            "Si Antes Te Hubiera Conocido"
+        ],
+        "foto": "img/karol_g.jpg"
+    },
+    {
+        "nombre": "Shakira",
+        "canciones": [
+            "Hips Don't Lie",
+            "Waka Waka (This Time for Africa)",
+            "La Tortura",
+            "Puntería"
+        ],
+        "foto": "img/shakira.jpg"
+    },
+    {
+        "nombre": "Rosalía",
+        "canciones": [
+            "Con Altura",
+            "Malamente",
+            "Despechá",
+            "Motomami"
+        ],
+        "foto": "img/rosalia.jpg"
+    },
+    {
+        "nombre": "Luis Fonsi",
+        "canciones": [
+            "Despacito",
+            "Échame la Culpa",
+            "No Me Doy Por Vencido",
+            "Aquí Estoy Yo"
+        ],
+        "foto": "img/luis_fonsi.jpg"
+    }
+]
