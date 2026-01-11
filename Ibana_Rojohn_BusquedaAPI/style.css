@@ -67,3 +67,8 @@
     color: var(--gray);
     line-height: 1.4;
 }
+
+.link {
+    display: block;
+    text-align: center;
+}
