@@ -1,0 +1,49 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    margin: 0 auto;
+}
+
+.form__label {
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.form__input {
+    margin-top: 0.5rem;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form__button {
+    margin-top: 2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form__error {
+    color: red;
+    margin-top: 0.5rem;
+}
+
+.form__status {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.form__status--success {
+    color: green;
+}
+
+.form__status--error {
+    color: red;
+}
+
+.container {
+    width: 50rem;
+    margin: 0 auto;
+}
