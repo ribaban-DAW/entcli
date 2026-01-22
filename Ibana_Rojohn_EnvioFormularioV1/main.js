@@ -95,7 +95,7 @@ form.addEventListener('submit', function (event) {
 
     const formData = new FormData(form);
 
-    fetch('https://jsonplaceholder.typicode.com/postsa', {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(formData)),
         headers: {
