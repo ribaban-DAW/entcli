@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Paginación de Productos</title>
+</head>
+
+<body>
+    <p>Paginación de Productos
+        Escribe un código en JavaScript que implemente la paginación para mostrar 10 productos por página en una tabla HTML, permitiendo navegar entre páginas</p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+            </tr>
+        </thead>
+        <tbody id="productos"></tbody>
+    </table>
+    <button onclick="cambiarPagina(-1)">Anterior</button>
+    <button onclick="cambiarPagina(1)">Siguiente</button>
+    <script>
+        let productos = [], pagina = 0, productosPorPagina = 10;
+        fetch('large_dataset.json')
+            .then(response => response.json())
+            .then(data => { productos = data.products; mostrarPagina(); });
+
+        function mostrarPagina() {
+            const tbody = document.getElementById('productos');
+            tbody.innerHTML = productos.slice(pagina * productosPorPagina, (pagina + 1) * productosPorPagina)
+                .map(p => `<tr><td>${p.id}</td><td>${p.name}</td><td>${p.price}</td><td>${p.category}</td></tr>`).join('');
+        }
+        
+        function cambiarPagina(dir) {
+            if ((pagina + dir) >= 0 && (pagina + dir) < Math.ceil(productos.length / productosPorPagina)) {
+                pagina += dir;
+                mostrarPagina();
+            }
+        }
+    </script>
+</body>
+
+</html>

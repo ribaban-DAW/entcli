@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Productos de Moda</title>
+</head>
+
+<body>
+    <h2>Productos de Moda</h2>
+    <p>Almacenamiento y Visualización de Productos de Moda. Escribe un código en JavaScript que almacene en LocalStorage
+        los productos de la categoría "Moda" y los muestre en una lista dentro del documento.</p>
+
+    <ul id="lista-moda"></ul>
+    <script>
+        fetch('large_dataset.json')
+
+            .then(response => response.json())
+            .then(data => {
+                const moda = data.products.filter(p => p.category === "Moda");
+                
+                localStorage.setItem('productosModa', JSON.stringify(moda));
+                const lista = document.getElementById('lista-moda');
+                lista.innerHTML = moda.map(p => `<li>${p.name} - $${p.price}</li>`).join('');
+            });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Filtrado de Productos</title>
+</head>
+
+<body>
+    <p>Filtrado y Búsqueda de Productos
+        Desarrolla un formulario en HTML y JavaScript que permita a los usuarios filtrar los productos por nombre o categoría en tiempo real mientras escriben en un campo de búsqueda.</p>
+    <input type="text" id="search" placeholder="Buscar producto">
+    <ul id="resultados"></ul>
+    <script>
+        let productos = [];
+        fetch('large_dataset.json')
+            .then(response => response.json())
+            .then(data => { productos = data.products; });
+
+        document.getElementById('search').addEventListener('input', function () {
+            const filtro = this.value.toLowerCase();
+
+            const resultados = productos.filter(p => p.name.toLowerCase().includes(filtro) || p.category.toLowerCase().includes(filtro));
+            
+            document.getElementById('resultados').innerHTML = resultados.map(p => `<li>${p.name} - ${p.category}</li>`).join('');
+        });
+    </script>
+</body>
+
+</html>

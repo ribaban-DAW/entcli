@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Productos</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Renderizado de Productos en una Página Web
+        Escribe un fragmento de código en HTML, CSS y JavaScript para cargar y mostrar dinámicamente en una tabla los primeros 20 productos del archivo large_dataset.json en una página web.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+            </tr>
+        </thead>
+        <tbody id="productos"></tbody>
+    </table>
+    <script>
+        fetch('large_dataset.json')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('productos');
+
+                const html = data.products.slice(0, 20).map(p => 
+                `<tr><td>${p.id}</td><td>${p.name}</td><td>${p.price}</td><td>${p.category}</td></tr>`).join(''); // Convierte el array en una sola cadena
+              
+                tbody.innerHTML = html; // Inserta el HTML generado
+
+                /*ALTERNATIVA MAS CORTA*/
+
+                data.products.slice(0, 20).forEach(p => {
+                    tbody.innerHTML += `<tr><td>${p.id}</td><td>${p.name}</td><td>${p.price}</td><td>${p.category}</td></tr>`;
+                }
+            );
+            });
+    </script>
+</body>
+
+</html>

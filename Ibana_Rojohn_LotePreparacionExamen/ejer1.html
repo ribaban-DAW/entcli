@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Listado de Electrónica</title>
+</head>
+
+<body>
+    <h2>Productos Electrónicos (Precio > 50)</h2>
+    <p>Ejercicio 1: Listado de Productos Electrónicos
+        Dado el archivo large_dataset.json, escribe un script en JavaScript que cargue el archivo y muestre en una lista HTML todos los productos de la categoría "Electrónica" cuyo precio sea mayor a 50.</p>
+    <ul id="lista-electronica"></ul>
+    <script>
+        async function cargarProductos() {
+            try {
+                const response = await fetch('large_dataset.json');
+                const data = await response.json();
+                
+                const lista = document.getElementById('lista-electronica');
+                const productos = data.products.filter(p => p.category === "Electrónica" && p.price > 50);
+                lista.innerHTML = productos.map(p => `<li>${p.name} - $${p.price}</li>`).join('');
+            } catch (error) {
+                console.error('Error al cargar el JSON:', error);
+            }
+        }
+        cargarProductos();
+        /*fetch('large_dataset.json')
+            .then(response => response.json())
+            .then(data => {
+                const lista = document.getElementById('lista-electronica');
+                const productos = data.products.filter(p => p.category === "Electrónica" && p.price > 50);
+                lista.innerHTML = productos.map(p => `<li>${p.name} - $${p.price}</li>`).join('');
+            })
+            .catch(error => console.error('Error al cargar el JSON:', error));*/
+    </script>
+</body>
+
+</html>
