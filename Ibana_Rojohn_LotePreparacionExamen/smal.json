@@ -1,0 +1,180 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Producto 1",
+      "price": 6.01,
+      "category": "Hogar",
+      "details": {
+        "manufacturer": "Marca 1",
+        "warranty_years": 2,
+        "stock": 3
+      }
+    },
+    {
+      "id": 2,
+      "name": "Producto 2",
+      "price": 7.02,
+      "category": "Deportes",
+      "details": {
+        "manufacturer": "Marca 2",
+        "warranty_years": 3,
+        "stock": 6
+      }
+    },
+    {
+      "id": 3,
+      "name": "Producto 3",
+      "price": 8.03,
+      "category": "Moda",
+      "details": {
+        "manufacturer": "Marca 3",
+        "warranty_years": 4,
+        "stock": 9
+      }
+    },
+    {
+      "id": 4,
+      "name": "Producto 4",
+      "price": 9.04,
+      "category": "Electr\u00f3nica",
+      "details": {
+        "manufacturer": "Marca 4",
+        "warranty_years": 5,
+        "stock": 12
+      }
+    },
+    {
+      "id": 5,
+      "name": "Producto 5",
+      "price": 10.05,
+      "category": "Hogar",
+      "details": {
+        "manufacturer": "Marca 5",
+        "warranty_years": 1,
+        "stock": 15
+      }
+    },
+    {
+      "id": 6,
+      "name": "Producto 6",
+      "price": 11.06,
+      "category": "Deportes",
+      "details": {
+        "manufacturer": "Marca 6",
+        "warranty_years": 2,
+        "stock": 18
+      }
+    },
+    {
+      "id": 7,
+      "name": "Producto 7",
+      "price": 12.07,
+      "category": "Moda",
+      "details": {
+        "manufacturer": "Marca 7",
+        "warranty_years": 3,
+        "stock": 21
+      }
+    },
+    {
+      "id": 8,
+      "name": "Producto 8",
+      "price": 13.08,
+      "category": "Electr\u00f3nica",
+      "details": {
+        "manufacturer": "Marca 8",
+        "warranty_years": 4,
+        "stock": 24
+      }
+    },
+    {
+      "id": 9,
+      "name": "Producto 9",
+      "price": 14.09,
+      "category": "Hogar",
+      "details": {
+        "manufacturer": "Marca 9",
+        "warranty_years": 5,
+        "stock": 27
+      }
+    },
+    {
+      "id": 10,
+      "name": "Producto 10",
+      "price": 15.1,
+      "category": "Deportes",
+      "details": {
+        "manufacturer": "Marca 10",
+        "warranty_years": 1,
+        "stock": 30
+      }
+    },
+    {
+      "id": 11,
+      "name": "Producto 11",
+      "price": 16.11,
+      "category": "Moda",
+      "details": {
+        "manufacturer": "Marca 11",
+        "warranty_years": 2,
+        "stock": 33
+      }
+    },
+    {
+      "id": 12,
+      "name": "Producto 12",
+      "price": 17.12,
+      "category": "Electr\u00f3nica",
+      "details": {
+        "manufacturer": "Marca 12",
+        "warranty_years": 3,
+        "stock": 36
+      }
+    },
+    {
+      "id": 13,
+      "name": "Producto 13",
+      "price": 18.13,
+      "category": "Hogar",
+      "details": {
+        "manufacturer": "Marca 13",
+        "warranty_years": 4,
+        "stock": 39
+      }
+    },
+    {
+      "id": 14,
+      "name": "Producto 14",
+      "price": 19.14,
+      "category": "Deportes",
+      "details": {
+        "manufacturer": "Marca 14",
+        "warranty_years": 5,
+        "stock": 42
+      }
+    },
+    {
+      "id": 15,
+      "name": "Producto 15",
+      "price": 20.15,
+      "category": "Moda",
+      "details": {
+        "manufacturer": "Marca 15",
+        "warranty_years": 1,
+        "stock": 45
+      }
+    },
+    {
+      "id": 16,
+      "name": "Producto 16",
+      "price": 21.16,
+      "category": "Electr\u00f3nica",
+      "details": {
+        "manufacturer": "Marca 16",
+        "warranty_years": 2,
+        "stock": 48
+      }
+    }
+  ]
+}

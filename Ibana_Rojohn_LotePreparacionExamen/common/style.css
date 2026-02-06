@@ -1,6 +1,23 @@
 .key {
   background: #222;
-  color: #ffbbff;
+  color: #ddd;
   padding: 0 1em;
   border-radius: 10px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 80%;
+  text-align: center;
+}
+
+.table__header {
+  padding: 1em;
+  background: #999;
+  border: 1px solid #ddd;
+}
+
+.table__data {
+  padding: 0.5em;
+  border: 1px solid #ddd;
 }

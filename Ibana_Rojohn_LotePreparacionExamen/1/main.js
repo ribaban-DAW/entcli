@@ -1,15 +1,13 @@
-import { loadJSON } from "../common/load.js"
+import Utils from "../common/utils.js";
 
-async function main() {
+(async () => {
   try {
-    const products = await loadJSON();
-    const filteredProducts = products.filter((product) => {
-      return product.category === "Electrónica" && product.price > 50;
-    })
+    const products = await Utils.loadJSON("../large_dataset.json");
+    const filteredProducts = products.filter((product) =>
+      product.category === "Electrónica" && product.price > 50
+    );
     console.log(filteredProducts);
   } catch (e) {
     console.error(e);
   }
-}
-
-main();
+})();
