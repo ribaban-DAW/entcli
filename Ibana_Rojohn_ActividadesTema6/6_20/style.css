@@ -1,9 +1,0 @@
-table {
-    border-spacing: 0;
-    text-align: center;
-}
-
-td, th {
-    padding: 1em;
-    border: 1px solid black;
-}
