@@ -40,49 +40,41 @@ async function loadJSON(url) {
 //   return vals;
 // }
 
-function createElement(type, textContent = "", className = "") {
-  const element = document.createElement(type);
-  element.textContent = textContent;
-  if (className) {
-    element.classList.add(className);
+function createElement(tagname, content = [], classname = "") {
+  const element = document.createElement(tagname);
+
+  const items = Array.isArray(content) ? content : [content]
+
+  items.forEach((item) => {
+    if (typeof item === "string") {
+      element.textContent += item;
+    } else {
+      element.append(item);
+    }
+  })
+
+  if (classname) {
+    element.classList.add(classname);
   }
 
   return element;
 }
 
 function createTable(items) {
-  const table = document.createElement("table");
-  table.classList.add("table");
-
-  const thead = document.createElement("thead");
-  const trh = document.createElement("tr");
-
-  // const keys = getKeysFrom(items[0]);
   const keys = ["id", "name", "price", "category", "manufacturer", "warranty_years", "stock"];
 
-  keys.forEach((key) => {
-    trh.append(createElement("th", key, "table__header"));
-  })
-  thead.append(trh);
-
-  const tbody = document.createElement("tbody");
-  items.forEach((item) => {
-    const trd = document.createElement("tr");
-    const vals = [item.id, item.name, item.price, item.category, item.details.manufacturer, item.details.warranty_years, item.details.stock];
-    vals.forEach((val) => {
-      trd.append(createElement("td", val, "table__data"));
-    })
-    tbody.append(trd);
-  })
-  table.append(thead, tbody);
-
-  return table;
+  return createElement("table", [
+    createElement("thead", createElement("tr", keys.map((key) => createElement("th", key, "table__header")))),
+    createElement("tbody", items.map((item) => {
+      const vals = [item.id, item.name, item.price, item.category, item.details.manufacturer, item.details.warranty_years, item.details.stock];
+      return createElement("tr", vals.map((val) => createElement("td", val, "table__data")))
+    })),
+  ], "table");
 }
 
 function showItems(container, items) {
   container.replaceChildren();
   container.append(createTable(items));
 }
-
 
 export default { createTable, showItems, loadJSON, createElement };
